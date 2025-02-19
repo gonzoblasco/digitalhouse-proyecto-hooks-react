@@ -1,17 +1,23 @@
-import { CounterApp } from './components/CounterApp.jsx';
-import { FormApp } from './components/FormApp.jsx';
-import { FetchApp } from './components/FetchApp.jsx';
+import { CalculoPesadoComponent } from './components/CalculoPesadoComponent.jsx';
+import { CallbackComponent } from './components/CallbackComponent.jsx';
+import { CounterComponent } from './components/CounterComponent.jsx';
+import { FetchComponent } from './components/FetchComponent.jsx';
+import { FormComponent } from './components/FormComponent.jsx';
 
 export const HooksApp = () => {
   return (
     <>
       <h1>Aplicación de Hooks</h1>
       <hr />
-      <CounterApp />
+      <FetchComponent />
       <hr />
-      <FormApp />
+      <CounterComponent />
       <hr />
-      <FetchApp />
+      <FormComponent />
+      <hr />
+      <CalculoPesadoComponent />
+      <hr />
+      <CallbackComponent />
     </>
   );
 };
