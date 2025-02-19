@@ -1,54 +1,14 @@
-import { useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from '../hooks/useForm';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const ListaTareasComponent = () => {
-  const initialState = [
-    {
-      id: 1,
-      name: 'Explicar Reducers',
-      finalizada: false,
-    },
-    {
-      id: 2,
-      name: 'Seguridad en React',
-      finalizada: false,
-    },
-  ];
-
-  const tareaReducer = (state, action = {}) => {
-    switch (action.type) {
-      case '[TAREAS] AGREGAR_TAREA':
-        return [...state, action.payload];
-
-      case '[TAREAS] FINALIZAR_TAREA':
-        return state.map((tarea) => {
-          if (tarea.id === action.payload) {
-            return {
-              ...tarea,
-              finalizada: !tarea.finalizada,
-            };
-          }
-
-          return tarea;
-        });
-
-      case '[TAREAS] ELIMINAR_TAREA':
-        return state.filter((tarea) => tarea.id !== action.payload);
-
-      case '[TAREAS] BORRAR_TAREAS':
-        return [];
-
-      default:
-        return state;
-    }
-  };
+  const tareas = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const { tarea, onInputChange, onResetForm } = useForm({
     tarea: '',
   });
-
-  const [state, dispatch] = useReducer(tareaReducer, initialState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -126,11 +86,11 @@ export const ListaTareasComponent = () => {
 
       <hr />
 
-      {state.length === 0 ? (
+      {tareas.length === 0 ? (
         <p>No hay tareas disponibles.</p>
       ) : (
         <ul className="list-group">
-          {state.map((tarea) => (
+          {tareas.map((tarea) => (
             <li
               key={tarea.id}
               className="list-group-item d-flex justify-content-between align-items-center"

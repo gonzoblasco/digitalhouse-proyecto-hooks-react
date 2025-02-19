@@ -1,11 +1,16 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 
-import { HooksApp } from "./HooksApp.jsx";
+import './index.css';
 
-createRoot(document.getElementById("root")).render(
+import { HooksApp } from './HooksApp.jsx';
+import { store } from './redux/store';
+
+createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <HooksApp />
+    <Provider store={store}>
+      <HooksApp />
+    </Provider>
   </StrictMode>,
 );
