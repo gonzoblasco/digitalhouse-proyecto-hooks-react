@@ -3,12 +3,13 @@ import { CallbackComponent } from './components/CallbackComponent.jsx';
 import { CounterComponent } from './components/CounterComponent.jsx';
 import { FetchComponent } from './components/FetchComponent.jsx';
 import { FormComponent } from './components/FormComponent.jsx';
+import { ListaTareasComponent } from './components/ListaTareasComponent.jsx';
 
 export const HooksApp = () => {
   return (
     <>
       <h1>Aplicación de Hooks</h1>
-      <hr />
+      {/*<hr />
       <FetchComponent />
       <hr />
       <CounterComponent />
@@ -17,7 +18,9 @@ export const HooksApp = () => {
       <hr />
       <CalculoPesadoComponent />
       <hr />
-      <CallbackComponent />
+      <CallbackComponent />*/}
+      <hr />
+      <ListaTareasComponent />
     </>
   );
 };

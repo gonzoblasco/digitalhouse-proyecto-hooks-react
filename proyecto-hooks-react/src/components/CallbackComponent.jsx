@@ -6,7 +6,7 @@ export const CallbackComponent = () => {
 
   const incrementParent = useCallback((value) => {
     setCounter((prevCounter) => prevCounter + value);
-  }, []);
+  }, [counter]);
 
   return (
     <>
