@@ -29,6 +29,9 @@ export const NavBarComponent = () => {
             <NavLink className='nav-link' to='/contact'>
               Contact
             </NavLink>
+            <NavLink className='nav-link' to='/login'>
+              Login
+            </NavLink>
           </div>
         </div>
       </div>
